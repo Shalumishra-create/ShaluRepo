@@ -1,10 +1,11 @@
 name: Hello World
 on: workflow_dispatch
 jobs:
- build:
+ jobs:
    runs-on: ubuntu-latest
    steps:
-    - name: Build step
-      run: echo "Hello, ${{ secrets.DOCKER_PASSWORD }}"
-
+    - name: Checkout the code
+      uses: actions/checkout@4
+    - name: Print index.html file
+    run: cat index.html
     
